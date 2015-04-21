@@ -1,4 +1,4 @@
-Try GeomLab in your browser: `https://jamesthomp.github.io/GeomJS/GeomJS/index.html`
+Try GeomLab in your browser: https://jamesthomp.github.io/GeomJS/GeomJS/index.html
 
 ----------
 
@@ -6,9 +6,9 @@ Note: This repository contains all TypeScript and the compiled JavaScript. Insta
 
 This project requires iojs and Java.
 
-`https://iojs.org/en/index.html`
+https://iojs.org/en/index.html
 
-`http://www.oracle.com/technetwork/java/javase/downloads/index.html`
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 ----------
 
