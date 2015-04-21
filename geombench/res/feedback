@@ -1,0 +1,81 @@
+#!/usr/bin/tclsh
+
+# Parameters
+set sendmail "/usr/lib/sendmail"
+set webmaster "mike@spivey.oriel.ox.ac.uk"
+
+proc url_decode {s} {
+    regsub -all {\+} $s " " s
+    
+    # Replace %xx by hex character
+    while {[regexp {%([0-9A-Fa-f][0-9A-Fa-f])} $s dummy hex]} {
+	set c [format "%c" "0x$hex"]
+	set s [string map [list "%$hex" $c] $s]
+    }
+
+    # Change to unix line endings
+    set s [string map [list "\r\n" "\n" "\r" "\n"] $s]
+
+    return $s
+}
+
+# sanitize -- clean up an email address for safety
+proc sanitize {s {default ""}} {
+    # Remove non-printing characters
+    regsub -all {[\001-\037]} $s "?" s
+    if {[string length $s] == 0} {
+	return $default
+    } else {
+	return $s
+    }
+}
+
+proc sorry {msg} {
+    puts "Content-type: text/html\n"
+    puts "<HTML>"
+    puts "<HEAD><TITLE>Sorry</TITLE></HEAD>"
+    puts "<BODY>"
+    puts "  <H1>Sorry</H1>"
+    puts "  <P>Sorry: your request could not be processed"
+    puts "  ($msg)."
+    puts "</BODY>"
+    puts "</HTML>"
+
+    exit 0
+}
+
+set rawdata [read stdin]
+set rawdata [split $rawdata "&="]
+
+foreach {name value} $rawdata {
+    set name [url_decode $name]
+    set value [url_decode $value]
+    set input($name) $value
+}
+
+# Check that required fields exist
+foreach name {"name" "email" "message"} {
+    if {! [info exists input($name)]} {
+	sorry "field '$name' is missing"
+    }
+}
+
+# Construct the message
+set email [sanitize $input(email) "nobody@nowhere.com"]
+set name [sanitize $input(name) "(no name given)"]
+
+set message "From: $email\n"
+append message "To: $webmaster\n"
+append message "Subject: \[GeomLab\] From $name\n\n"
+append message "$input(message)\n\n"
+foreach key {HTTP_REFERER REMOTE_HOST REMOTE_ADDR HTTP_USER_AGENT} {
+    if {[info exists env($key)]} {append message "$key=$env($key)\n"}
+}
+
+# Use sendmail to send it
+exec $sendmail -t <<$message
+
+# Response redirects to thanks page
+set response [sanitize $input(response) "thanks.html"]
+set dir [regsub {/[^/]*$} $env(HTTP_REFERER) ""]
+puts "Location: $dir/$response\n"

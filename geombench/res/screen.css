@@ -1,0 +1,502 @@
+div#mw-head p {
+	background: url("images/cycletpale.png");
+	font-weight: bold;
+	font-size: 120%;
+	color: #002147;
+	margin: 1.67em 0;
+	height: 3em;
+        padding-top: 0.33em;
+}
+
+div#mw-logo {
+	float: left;
+	width: 9em;
+	height: 8em;
+        background-image: url(images/quad96.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-left: 2em;
+}
+
+div#p-search {
+	float: right;
+	margin-top: 3em;
+}
+
+
+/* Framework */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: 1em;
+}
+
+body {
+	/* @embed */
+	background: url(images/fade.png) repeat-x;
+}
+
+/* Content */
+div#content {
+	margin-left: 10em;
+	padding: 1em;
+	background: white;
+	border-left: 1px solid #aaf;
+	color: black;
+	direction: ltr;
+}
+
+/* Head */
+#mw-page-base {
+	height: 8em;
+}
+
+#mw-head-base {
+	margin-top: -3.5em;
+	margin-left: 10em;
+	height: 3.5em;
+	border-bottom: 1px solid #aaf;
+}
+
+div#mw-head {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+}
+
+div#mw-head h5 {
+	margin: 0;
+	padding: 0;
+}
+
+/* Hide empty portlets */
+div.emptyPortlet {
+	display: none;
+}
+
+/* Search */
+#p-search h5 {
+	display: none;
+}
+
+#p-search {
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}
+
+#p-search form {
+	margin-top: 0.17em;
+	padding: 0.4em;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	box-shadow: 3px 3px 3px #888;
+	-moz-box-shadow: 3px 3px 3px #888;
+	-webkit-box-shadow: 3px 3px 3px #888;
+	background: #88d;
+}
+
+div#simpleSearch {
+	position: relative;
+	background-color: white;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+
+div#simpleSearch label {
+	font-size: 0.8em;
+	top: 0.25em;
+	direction: ltr;
+}
+
+div#simpleSearch input:focus {
+	outline: none;
+}
+
+div#simpleSearch input.placeholder {
+	color: #999;
+}
+
+div#simpleSearch input::-webkit-input-placeholder {
+	color: #999;
+}
+
+div#simpleSearch input#searchInput {
+	margin: 0;
+	border-width: 0;
+	padding: 0.25em;
+	line-height: 1em;
+	font-size: 0.8em;
+	width: 9em;
+	background-color: transparent;
+	direction: ltr;
+}
+
+div#simpleSearch button#searchButton {
+	margin: 0;
+	padding: 0;
+	width: 1.75em;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+div#simpleSearch button#searchButton img {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Panel */
+div#mw-panel {
+	position: absolute;
+	top: 8em;
+	padding-top: 1em;
+	width: 10em;
+	left: 0;
+}
+
+div#mw-panel div.portal {
+	padding-bottom: 1.5em;
+	direction: ltr;
+}
+
+div#mw-panel div.portal h5 {
+	display: none;
+}
+
+div#mw-panel div.portal div.body {
+	margin: 0;
+	margin-left: 1.25em;
+	margin-right: 1em;
+}
+
+div#mw-panel div.portal div.body ul {
+	list-style: none;
+	list-style-image: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+div#mw-panel div.portal div.body ul li {
+	line-height: 1.125em;
+	padding: 0;
+	padding-bottom: 0.5em;
+	margin: 0;
+	font-size: 0.9em;
+	word-wrap: break-word;
+}
+
+div#mw-panel div.portal div.body ul li a {
+	color: #0645ad;
+}
+
+/* Footer */
+div#footer {
+	margin-left: 10em;
+	margin-top: 0;
+	padding: 0.75em;
+	border-top: 1px solid #aaf;
+	direction: ltr;
+}
+
+div#footer ul {
+	list-style: none;
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+div#footer ul li {
+	margin: 0;
+	padding: 0;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: #333;
+	font-size: 0.7em;
+}
+
+div#footer #footer-icons {
+	float: right;
+}
+
+body div#footer #footer-places {
+	float: left;
+}
+
+div#footer #footer-info li {
+	line-height: 1.4em;
+}
+
+div#footer #footer-icons li {
+	float: left;
+	margin-left: 0.5em;
+	line-height: 2em;
+	text-align: right;
+}
+
+div#footer #footer-places li {
+	float: left;
+	margin-right: 1em;
+	line-height: 2em;
+}
+
+/**
+ * The following code is slightly modified from monobook
+ */
+div#content {
+	line-height: 1.5em;
+}
+
+#bodyContent {
+	font-size: 0.8em;
+	max-width: 50em;
+}
+
+.editsection {
+	float: right;
+}
+
+ul {
+	/* @embed */
+	list-style-image: url(images/bullet-icon.png);
+}
+
+pre, .mw-code {
+	line-height: 1.3em;
+}
+
+/* Site Notice (includes notices from CentralNotice extension) */
+#siteNotice {
+	font-size: 0.8em;
+}
+
+#firstHeading {
+	padding-top: 0;
+	margin-top: 0;
+	padding-top: 0;
+	font-size: 1.6em;
+}
+
+div#content a.external,
+div#content a.external[href ^="gopher://"] {
+	/* @embed */
+	background: url(images/external-link-ltr-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href ^="https://"],
+.link-https {
+	/* @embed */
+	background: url(images/lock-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href ^="mailto:"],
+.link-mailto {
+	/* @embed */
+	background: url(images/mail-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href ^="news:"] {
+	/* @embed */
+	background: url(images/news-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href ^="ftp://"],
+.link-ftp {
+	/* @embed */
+	background: url(images/file-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href ^="irc://"],
+div#content a.external[href ^="ircs://"],
+.link-irc {
+	/* @embed */
+	background: url(images/talk-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href $=".ogg"], div#content a.external[href $=".OGG"],
+div#content a.external[href $=".mid"], div#content a.external[href $=".MID"],
+div#content a.external[href $=".midi"], div#content a.external[href $=".MIDI"],
+div#content a.external[href $=".mp3"], div#content a.external[href $=".MP3"],
+div#content a.external[href $=".wav"], div#content a.external[href $=".WAV"],
+div#content a.external[href $=".wma"], div#content a.external[href $=".WMA"],
+.link-audio {
+	/* @embed */
+	background: url(images/audio-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href $=".ogm"], div#content a.external[href $=".OGM"],
+div#content a.external[href $=".avi"], div#content a.external[href $=".AVI"],
+div#content a.external[href $=".mpeg"], div#content a.external[href $=".MPEG"],
+div#content a.external[href $=".mpg"], div#content a.external[href $=".MPG"],
+.link-video {
+	/* @embed */
+	background: url(images/video-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+div#content a.external[href $=".pdf"], div#content a.external[href $=".PDF"],
+div#content a.external[href *=".pdf#"], div#content a.external[href *=".PDF#"],
+div#content a.external[href *=".pdf?"], div#content a.external[href *=".PDF?"],
+.link-document {
+	/* @embed */
+	background: url(images/document-icon.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+/* Icon for Usernames */
+#pt-userpage,
+#pt-anonuserpage,
+#pt-login {
+	/* @embed */
+	background: url(images/user-icon.png) left top no-repeat;
+	padding-left: 15px !important;
+	text-transform: none;
+}
+
+.redirectText {
+	font-size: 140%;
+}
+
+.redirectMsg img {
+	vertical-align: text-bottom;
+}
+
+#bodyContent {
+	position: relative;
+	width: 100%;
+}
+
+div#bodyContent {
+	line-height: 1.5em;
+}
+
+.skin-winkel #mw-notification-area {
+	top: 7em;
+	font-size: 0.8em;
+}
+
+.skin-winkel .mw-notification {
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.93);
+	padding: 0.75em 1.5em;
+	border: solid 1px #a7d7f9;
+	border-radius: 0.75em;
+	-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.125);
+	-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.125);
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.125);
+}
+
+/* Watch/Unwatch Icon Styling */
+#ca-unwatch.icon a,
+#ca-watch.icon a {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	display: block;
+	width: 26px;
+	/* This hides the text but shows the background image */
+	padding-top: 1.5em;
+	margin-top: 0;
+	/* Only applied in IE6 */
+	margin-top: -0.8em !ie;
+	height: 0;
+	overflow: hidden;
+	/* @embed */
+	background-image: url(images/watch-icons.png);
+	background-repeat: no-repeat;
+}
+
+#ca-unwatch.icon a {
+	background-position: -43px 60%;
+}
+
+#ca-watch.icon a {
+	background-position: 5px 60%;
+}
+
+#ca-unwatch.icon a:hover,
+#ca-unwatch.icon a:focus {
+	background-position: -67px 60%;
+}
+
+#ca-watch.icon a:hover,
+#ca-watch.icon a:focus {
+	background-position: -19px 60%;
+}
+
+#ca-unwatch.icon a.loading,
+#ca-watch.icon a.loading {
+	/* @embed */
+	background-image: url(images/watch-icon-loading.gif);
+	background-position: 5px 60%;
+}
+
+#ca-unwatch.icon a span,
+#ca-watch.icon a span {
+	display: none;
+}
+
+/* Tooltips are outside of the normal body code, so this helps make the size of the text sensible */
+.tipsy {
+	font-size: 0.8em;
+}
+
+/* Animate between standard and high definition layouts */
+body.winkel-animateLayout div#content,
+body.winkel-animateLayout div#footer {
+	-moz-transition: margin-left 250ms, padding 250ms;
+	-webkit-transition: margin-left 250ms, padding 250ms;
+	-o-transition: margin-left 250ms, padding 250ms;
+	transition: margin-left 250ms, padding 250ms;
+}
+
+body.winkel-animateLayout #p-logo,
+body.winkel-animateLayout #left-navigation {
+	-moz-transition: left 250ms;
+	-webkit-transition: left 250ms;
+	-o-transition: left 250ms;
+	transition: left 250ms;
+}
+
+body.winkel-animateLayout #mw-panel {
+	-moz-transition: padding-left 250ms;
+	-webkit-transition: padding-left 250ms;
+	-o-transition: padding-left 250ms;
+	transition: padding-left 250ms;
+}
+
+body.winkel-animateLayout #p-search {
+	-moz-transition: margin-right 250ms;
+	-webkit-transition: margin-right 250ms;
+	-o-transition: margin-right 250ms;
+	transition: margin-right 250ms;
+}
+
+body.winkel-animateLayout #p-personal {
+	-moz-transition: right 250ms;
+	-webkit-transition: right 250ms;
+	-o-transition: right 250ms;
+	transition: right 250ms;
+}
+
+body.winkel-animateLayout #mw-head-base {
+	-moz-transition: margin-left 250ms;
+	-webkit-transition: margin-left 250ms;
+	-o-transition: margin-left 250ms;
+	transition: margin-left 250ms;
+}
+

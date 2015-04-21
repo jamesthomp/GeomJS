@@ -1,0 +1,106 @@
+{*
+ * prelude.txt
+ * 
+ * This file is part of GeomLab
+ * Copyright (c) 2005 J. M. Spivey
+ * All rights reserved
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ * 1. Redistributions of source code must retain the above copyright notice, 
+ *    this list of conditions and the following disclaimer.      
+ * 2. Redistributions in binary form must reproduce the above copyright notice, 
+ *    this list of conditions and the following disclaimer in the documentation 
+ *    and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote products 
+ *    derived from this software without specific prior written permission.
+ *    
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR 
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *}
+ 
+{ RE-INSTALL THE COMPILER }
+
+define _top = __top();
+
+ 
+{ INSTALL LOADABLE MODULES }
+
+_install("StringPrims");
+_infixl(#^, 5);
+
+{ BASIC DEFINITIONS }
+
+define true = numeric(0);
+define false = numeric(true);
+
+define _expect(fun, type) = _error("#expect", [fun, type]);
+
+define not (p) = false when p = true
+  | not (p) = true when p = false
+  | not (_) = _expect("not", "a boolean");
+
+{ Needed as a function value, as in 'let f = (and) in ...'
+  These are not really recursive, because the bodies are compiled
+  as short-circuit conditions. }
+define and (x, y) = x and y;
+define or (x, y) = x or y;
+
+_infixl(#div, 6);
+define div (x, y) = int(x/y);
+_infixl(#mod, 6);
+define mod (x, y) = x - y * int(x/y);
+
+define abs(x) = if x >= 0 then x else -x;
+
+define ++ ([], ys) = ys 
+  | ++ (x:xs, ys) = x:(xs ++ ys)
+  | ++ (_, _) = _expect("++", "a list");
+
+define reverse(xs) =
+  let reva([], vs) = vs 
+    | reva(x:us, vs) = reva(us, x:vs) 
+    | reva(_, _) = _expect("reverse", "a list") in
+  reva(xs, []);
+
+define length([]) = 0 
+  | length(x:xs) = length(xs)+1
+  | length(_) = _expect("length", "a list");
+
+define assoc(x, []) = [] 
+  | assoc(x, [u,v]:zs) = if x = u then v else assoc(x, zs);
+      
+define map(f, []) = [] | map(f, x:xs) = f(x) : map(f, xs);
+
+define member(x, []) = false | member(x, y:ys) = x = y or member(x, ys);
+
+define index(x, xs) = 
+  let h(n, []) = -1 | h(n, y:ys) = if x = y then n else h(n+1, ys) in
+  h(0, xs);
+
+define foldr(f, a, []) = a | foldr(f, a, x:xs) = f(x, foldr(f, a, xs));
+
+define foldl(f, a, []) = a | foldl(f, a, x:xs) = foldl(f, f(a, x), xs);
+
+define opp(left(a)) = right(a)
+  | opp(right(a)) = left(a)
+  | opp(ahead(a)) = ahead(a)
+  | opp(_) = _expect("opp", "a command");
+
+define opposite(xs) = map(opp, xs);
+
+{ Yuck: mustn't make a closure called '.', or the JIT generates a class
+  with an illegal name. }
+_infixl(#., 5);
+define . = function (g, f) function (x) g(f(x));
+
+_stage(2);

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp 
+  spec="1.0"
+  codebase="@CODEBASE@"
+  href="geomdemo.jnlp">
+  <information>
+    <title>GeomLab Demo</title>
+    <vendor>Mike Spivey</vendor>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="geomlab.jar"/>
+    <jar href="examples.jar"/>
+    <property name="jnlp.session" value="examples.gls"/>
+  </resources>
+  <application-desc main-class="geomlab.GeomLab"/>
+</jnlp>

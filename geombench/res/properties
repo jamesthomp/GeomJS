@@ -1,0 +1,92 @@
+appname: GeomLab
+welcome: Welcome to GeomLab!
+fontname: VeraMono
+fontsize: 14
+lookandfeel: Nimbus
+session: geomlab.gls
+
+version: GeomLab version 3.0
+
+copyright: Copyright (c) 2005-2013 J. M. Spivey\n\
+  Font data Copyright (c) 2003 Bitstream, Inc.
+
+licence: Redistribution and use in source and binary forms, with or\n\
+  without modification, are permitted provided that the\n\
+  following conditions are met:\n\n\
+  1. Redistributions of source code must retain the above\n\
+     copyright notice, this list of conditions and the\n\
+     following disclaimer.\n\
+  2. Redistributions in binary form must reproduce the above\n\
+     copyright notice, this list of conditions and the\n\
+     following disclaimer in the documentation and/or other\n\
+     materials provided with the distribution.\n\
+  3. The name of the author may not be used to endorse or\n\
+     promote products derived from this software without\n\
+     specific prior written permission.\n\n\
+  THIS SOFTWARE IS PROVIDED BY THE AUTHOR \"AS IS\" AND\n\
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT \n\
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY\n\
+  AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.\n\
+  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,\n\
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n\
+  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n\
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\n\
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n\
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n\
+  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n\
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN\n\
+  IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+err#apply: applying a non-function
+err#arity: each clause should have the same number of arguments
+err#badexp: I don't recognise this expression
+err#badformat: Sorry, file %s is not a saved session
+err#badtok: unknown symbol
+err#badversion: Sorry, file %s was saved by a different version of GeomLab
+err#bracematch: can't find matching '{'
+err#bramatch: can't find matching '['
+err#comment: unterminated comment
+err#condbool: boolean expected as condition
+err#constr: matching must use a constructor
+err#divzero: division by zero
+err#eat: I expected %s here
+err#epswrite: I/O error while writing EPS file - %s
+err#exception: Unexpected exception %s
+err#exp: I expected an expression here
+err#expect: '%s' expects %s argument
+err#head: taking head of %s
+err#idop: I expected an identifier or operator
+err#readerr: Can't read %s
+err#writeerr: Can't write %s
+err#imageio: image I/O failed - %s
+err#interrupt: execution was interrupted
+err#junk: extra text appears after the end of the expression
+err#match: no pattern matches arguments (%s)
+err#match1: no pattern matches argument %s
+err#memory: sorry, that took too much memory
+err#missingclass: Couldn't find class - %s
+err#multidef: multiple definitions of '%s'
+err#names: the same function name should appear in each clause
+err#nofile: Can't find file %s
+err#nopicture: No picture
+err#noprint: No print job
+err#noresource: Can't read resource %s
+err#numargs: function '%s' called with %d arguments but needs %d
+err#numargs1: function '%s' called with 1 argument but needs %d
+err#parenmatch: can't find matching '('
+err#patnargs: matching constructor '%s' with wrong number of arguments
+err#pattern: I don't recognise this pattern
+err#picio: I/O failed while writing %s
+err#printfail: Printing failed
+err#readfail: I/O failed while reading %s - %s
+err#redef: can't replace built-in definition of '%s'
+err#save: session save failed - %s
+err#sqrt: taking square root of a negative number
+err#stack: recursion went too deep
+err#steps: sorry, that took too many steps
+err#string: unterminated string constant
+err#tail: taking tail of %s
+err#time: sorry, that took too much time
+err#undef: '%s' is not defined
+err#writefail: I/O failed while writing %s - %s
+

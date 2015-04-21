@@ -1,0 +1,10 @@
+To fully bootstrap (with GeomBoot):
+
+java -cp geom -ea geomlab.RunScript -b GeomBoot compiler.txt prelude.txt -e _save(\"geomlab.gls\")
+
+or instead of -e use -t
+
+
+To create the GeomBoot file:
+
+java -cp geom -ea geomlab.RunScript -b GeomBoot compiler.txt -e _save(\"geomlab.gls\")

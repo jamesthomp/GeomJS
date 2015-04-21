@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" codebase="@CODEBASE@" href="geomlab.jnlp">
+  <information>
+    <title>GeomLab</title>
+    <vendor>Mike Spivey</vendor>
+    <description>The GeomLab programming environment</description>
+    <icon type="splash" href="icon64.png"/>
+    <icon href="icon32.png"/>
+    <offline-allowed/>
+    <homepage href="http://spivey.oriel.ox.ac.uk/geomlab"/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="geomlab.jar" main="true"/>
+  </resources>
+  <application-desc main-class="geomlab.GeomLab"/>
+</jnlp>
