@@ -130,7 +130,8 @@ module GeomJS.Funbase {
             var b = frame[--sp];
             if (b === BoolValue.False) {
               pc = rand;
-            } else if (b.type !== Type.Bool) {
+            } else if (b !== BoolValue.True) {
+              // Error: Not a boolean.
               Evaluator.errBoolCond();
             }
             break;

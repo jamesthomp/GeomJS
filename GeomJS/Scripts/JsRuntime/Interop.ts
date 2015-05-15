@@ -21,7 +21,12 @@ module GeomJS.JsRuntime {
       // This is a little bit of a hack!
       Name.nameTable[geomName] = eval(func);
     }
-
+    
+    export function remove(name) {
+      inlineDict[name] = undefined;
+      dict[name] = undefined;
+    }
+    
     // Find (optimisation used in compiler for linking functions without going through the name table)
     export function find(name, inline) {
       if (inline) {

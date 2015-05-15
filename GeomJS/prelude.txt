@@ -28,11 +28,6 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *}
  
-{ RE-INSTALL THE COMPILER }
-
-define _top = __top();
-
- 
 { INSTALL LOADABLE MODULES }
 
 _install("StringPrims");
@@ -90,13 +85,6 @@ define index(x, xs) =
 define foldr(f, a, []) = a | foldr(f, a, x:xs) = f(x, foldr(f, a, xs));
 
 define foldl(f, a, []) = a | foldl(f, a, x:xs) = foldl(f, f(a, x), xs);
-
-define opp(left(a)) = right(a)
-  | opp(right(a)) = left(a)
-  | opp(ahead(a)) = ahead(a)
-  | opp(_) = _expect("opp", "a command");
-
-define opposite(xs) = map(opp, xs);
 
 { Yuck: mustn't make a closure called '.', or the JIT generates a class
   with an illegal name. }

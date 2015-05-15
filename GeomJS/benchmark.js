@@ -71,8 +71,34 @@ function benchmark(task, times, runs) {
   });
   proc.on('error', function(error) {
     console.log(error);
-  })
+  });
 }
+
+/*
+var powTwo = function powtwo(n) {
+  if (n.constructor !== Number) {
+    return "powtwo expects a number";
+  } else if (n < 0) {
+    return "powtwo expects number >= 0";
+  } else if (n === 0) {
+    return 1;
+  } else {
+    return powtwo(n - 1) + powtwo(n - 1);
+  }
+};
+
+function testPowTwoNative() {
+  for (var i = 0; i < 5; i++) {
+    var start = process.hrtime();
+    powTwo(24);
+    var diff = process.hrtime(start);
+    var timeTaken = diff[0] * 1e9 + diff[1];
+    console.log(timeTaken / 1000000);
+  }
+}
+
+testPowTwoNative();
+*/
 
 function populateTasksFromDirectory(compilers, benchmarkDirectory) {
   var files = fs.readdirSync(benchmarkDirectory);
@@ -103,7 +129,7 @@ function populateTasksFromPowTwo(compilers) {
   });
 }
 
-var COMPILERS = ['java', 'compilerjs', 'compilerjsinline', 'interp'];
+var COMPILERS = ['compilerjsinline', 'java', 'compilerjs', 'interp'];
 populateTasksFromDirectory(COMPILERS, 'benchmarks/');
 populateTasksFromPowTwo(COMPILERS);
 processTask();

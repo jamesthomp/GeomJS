@@ -25,6 +25,9 @@ module GeomJS.JsRuntime {
 
     export function setGlodef(tag: Value, val: Value): void {
       //n.level = stage;
+      if (stage == 2) {
+        Interop.remove(tag.name);
+      }
       nameTable[tag.name] = val;
     }
 

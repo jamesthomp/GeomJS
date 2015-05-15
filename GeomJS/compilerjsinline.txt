@@ -736,6 +736,7 @@ define __js() =
        { wrap body as a self-executing function lambda }
          let wrap_sef([#seq, e1, e2],env) = _seq(["(function () { ", j_exp([#seq, e1, e2],env,true,true), " })() "])
            | wrap_sef([#let, e1, e2],env) = _seq(["(function () { ", j_exp([#let, e1, e2],env,true,true), " })() "])
+          { | wrap_sef(body,env) = _seq(["(function () { ", j_exp(body,env,true,true), " })() "]) in }
            | wrap_sef(body,env) = j_exp(body,env,false,false) in
         j_yield(
           gen_tif(

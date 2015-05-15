@@ -84,37 +84,11 @@ powtwo(18); { Your mileage may vary beyond 22... }
   </div>
   
   <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-  <script src="Scripts/Funbase/Primitive.js"></script>
-  <script src="Scripts/Funbase/Func.js"></script>
-  <script src="Scripts/Funbase/Value.js"></script>
-  <script src="Scripts/Funbase/Bootstrap.js"></script>
-  <script src="Scripts/Funbase/Common.js"></script>
-  <script src="Scripts/Funbase/Evaluator.js"></script>
-  <script src="Scripts/Funbase/FunCode.js"></script>
-  <script src="Scripts/Funbase/GeomBase.js"></script>
-  <script src="Scripts/Funbase/Interp.js"></script>
-  <script src="Scripts/Funbase/Name.js"></script>
-  <script src="Scripts/Funbase/RunScript.js"></script>
-  <script src="Scripts/Funbase/Scanner.js"></script>
-  <script src="Scripts/Funbase/Plugins/Cell.js"></script>
-  <script src="Scripts/Funbase/Plugins/Hash.js"></script>
-  <script src="Scripts/Funbase/Plugins/BasicPrims.js"></script>
-  <script src="Scripts/Funbase/Plugins/StringPrims.js"></script>
-
-  <script src="Scripts/JsRuntime/Value.js"></script>
-  <script src="Scripts/JsRuntime/Plugins/Inline.js"></script>
-  <script src="Scripts/JsRuntime/Name.js"></script>
-  <script src="Scripts/JsRuntime/Interop.js"></script>
-  <script src="Scripts/JsRuntime/Plugins/BasicPrims.js"></script>
-  <script src="Scripts/JsRuntime/Plugins/Hash.js"></script>
-  <script src="Scripts/JsRuntime/Plugins/Cell.js"></script>
-  <script src="Scripts/JsRuntime/Plugins/StringPrims.js"></script>
-
-  <script src="app.js"></script>
+  <script src="webexec.js"></script>
+    
   <script>
     var editor = ace.edit("editor");
     editor.setPrintMarginColumn(false);
-    editor.getSession().setMode("ace/mode/javascript");
 
     editor.commands.addCommand({
       name: "execute",

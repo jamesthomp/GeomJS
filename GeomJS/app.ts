@@ -38,6 +38,7 @@ function begin() {
   // at this point we switch to now running code using the compiled (javascript) version of the javascript compiler.
   // it is currently in the bootstraped stage so we load in the js compiler to get us finally ready.
   loadFileIntoJs('compilerjs.txt');
+  loadFileIntoJs('prelude.txt');
   // phew!
 }
 
